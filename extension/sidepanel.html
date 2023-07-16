@@ -1,49 +1,87 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <title>Trakly AI</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="templates/cdn.jsdelivr.net_npm_bootstrap@5.3.0_dist_css_bootstrap.min.css" rel="stylesheet">
-  <script src="templates/cdn.jsdelivr.net_npm_bootstrap@5.3.0_dist_js_bootstrap.bundle.min.js"></script>
-  <style>
-    body {
-      border: 0px solid black;
-      background-color: #faf5ff;
-      padding-top: 5px;
-      padding-right: 3px;
-      padding-bottom: 5px;
-      padding-left: 8px;
-    }
-    div{
-        border:0px;
-    }
-    .form-control:focus {
-      border-color: #9e2222;
-    }
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="templates/cdn.jsdelivr.net_npm_bootstrap@5.3.0_dist_css_bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <script src="templates/cdn.jsdelivr.net_npm_bootstrap@5.3.0_dist_js_bootstrap.bundle.min.js"></script>
+    <style>
+      body {
+        border: 0px solid black;
+        background-color: #faf5ff;
+        padding: 5px 3px;
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        margin: 0;
+        position: relative;
+      }
+      #top-bar {
+        margin-bottom: 10px;
+      }
+      .form-control:focus {
+        border-color: #9e2222;
+      }
+      #chatbox {
+        overflow-y: auto;
+        flex-grow: 1;
+        margin-bottom: 80px;
+      }
+      #input-placeholder {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background: #faf5ff;
+      }
     </style>
-</head>
-<body >
-    <div style="height: 10px;"></div>
-    <div style="border:0px; vertical-align: bottom;">
-        <img src="ai.png" style="width:40px; vertical-align:middle;"/><h2 style="vertical-align:middle; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif , 'Arial Narrow', Arial, sans-serif; display:inline; margin-left:5px; color: #d50238;">Trakly AI&nbsp;&nbsp;</h2>
-        <button id="analyze" display:inline; class="btn btn-danger">Review project</button>
+  </head>
+  <body>
+    <div id="top-bar" style="border: 0px">
+      <img src="ai.png" style="width: 40px; vertical-align: middle" />
+      <h2
+        style="
+          vertical-align: middle;
+          font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+            'Lucida Sans', Arial, sans-serif, 'Arial Narrow', Arial, sans-serif;
+          display: inline;
+          margin-left: 5px;
+          color: #d50238;
+        "
+      >
+        Trakly AI&nbsp;&nbsp;
+      </h2>
+      <button id="analyze" display:inline; class="btn btn-danger">
+        Review project
+      </button>
     </div>
-    <div style="height: 10px;"></div>
-    <div id="chatbox" class="d-flex align-items-start flex-column" style="height: 100%;">
 
-        </div>
-        <div class="p-1">
-            <div class="input-group mb-3">
-                <input type="text" id="user-input" class="form-control" placeholder="Type your message" aria-label="Recipient's username" aria-describedby="button-addon2" style="border-style: solid; border-color:#d50238;" autofocus>
-                <button class="btn btn-outline-danger" type="text" id="send-chat"><img src="ai-side.png" width="30" /></button>
-            </div>
-            
-        </div>   
+    <div id="chatbox" class="d-flex align-items-start flex-column"></div>
+
+    <div id="input-placeholder" class="p-1">
+      <div class="input-group mb-3">
+        <input
+          type="text"
+          id="user-input"
+          class="form-control"
+          placeholder="Type your message"
+          aria-label="Recipient's username"
+          aria-describedby="button-addon2"
+          style="border-style: solid; border-color: #d50238"
+          autofocus
+        />
+        <button class="btn btn-outline-danger" type="text" id="send-chat">
+          <img src="ai-side.png" width="30" />
+        </button>
+      </div>
     </div>
 
-    <div id="message-container" class="mt-auto p-1" style="height: 0px; vertical-align: bottom;">
+    <div id="message-container" class="p-1"></div>
 
     <script src="popup.js"></script>
-</body>
+  </body>
 </html>
