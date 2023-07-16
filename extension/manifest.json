@@ -1,0 +1,36 @@
+{
+  "manifest_version": 3,
+  "name": "Trakly AI",
+  "version": "1.0",
+  "description": "Project Manager tips and review powered by Trakly AI.",
+  "permissions": [
+    "sidePanel",
+    "activeTab",
+    "scripting",
+    "downloads",
+    "tabs"
+  ],
+  "side_panel": {
+    "default_path": "sidepanel.html"
+  },
+  "action": {
+    "default_title": "Click to open panel"
+  },
+  "host_permissions": [
+    "http://localhost:5000/*"
+  ],
+  "background": {
+    "service_worker": "service-worker.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [ "http://*/*", "https://*/*" ],
+      "js": [ "content-script.js" ]
+    }
+  ],
+  "icons": {
+    "16": "ai.png",
+    "48": "ai.png",
+    "128": "ai.png"
+  }
+}
